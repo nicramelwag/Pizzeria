@@ -161,7 +161,7 @@ namespace Tangy.Controllers
                     menuItemFromDb.CategoryId = ProductVM.Product.CategoryId;
                     await _db.SaveChangesAsync();
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
 
                 }

@@ -1,8 +1,13 @@
-﻿
+﻿@model Pizzeria.Models.HomeViewModel.IndexViewModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Home Page";
 }
 
-<h2>Index</h2>
+@foreach (var category in Model.Categories)
+{
+    <h3 class="text-success">@category.Name</h3>
+    <div class="row" style="padding-bottom:50px;">
+        @Html.Partial("_ThumbnailAreaPartial", Model.Products.Where(u => u.Category.Name.Equals(category.Name)))
+    </div>
 
-hello world
+}

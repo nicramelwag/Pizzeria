@@ -12,20 +12,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 </head>
 <body>
+
     <nav>
-        <div class="nav-fostrap">
-            <ul>
+        <div class="nav">
+            <ul style="width: 100%; z-index: 2;">
                 <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                <li>
-                    <a href="javascript:void(0)">Admin<span class="arrow-down"></span></a>
-                    <ul class="dropdown">
+                <li class="tutorials" style="z-index: 1000">
+                    <a href="#">Admin</a>
+                    <ul>
                         <li><a asp-controller="Categories" asp-action="Index">Kategorie</a></li>
                         <li><a asp-controller="Products" asp-action="Index">Produkty</a></li>
+                        <li><a asp-controller="Coupons" asp-action="Index">Zniżki</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav><!-- #multi-level-nav .multi-level-nav -->
+
     <div class="container body-content">
         <br />
         @RenderBody()

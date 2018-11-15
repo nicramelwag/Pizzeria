@@ -24,7 +24,7 @@ namespace Pizzeria.Controllers
             {
                 Products = await _db.Products.Include(m => m.Category).ToListAsync(),
                 Categories = _db.Category.OrderBy(c => c.DisplayOrder),
-                //Coupons = _db.Coupons.Where(c => c.isActive == true).ToList()
+                Coupons = _db.Coupons.Where(c => c.isActive == true).ToList()
             };
             return View(IndexVM);
         }

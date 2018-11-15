@@ -9,7 +9,7 @@ namespace Pizzeria.Models.HomeViewModel
     {
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<Category> Categories { get; set; }
-        //public IEnumerable<Coupons> Coupons { get; set; }
+        public IEnumerable<Coupons> Coupons { get; set; }
 
         //public string StatusMessage { get; set; }
     }

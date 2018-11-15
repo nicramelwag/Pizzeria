@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Pizzeria.Models;
 
 namespace Pizzeria.Data
 {
@@ -13,6 +14,8 @@ namespace Pizzeria.Data
             : base(options)
         {
         }
+
+        public DbSet<Category> Category { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

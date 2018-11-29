@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Pizzeria.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,16 +21,24 @@
         <div class="nav">
             <ul style="width: 100%; z-index: 2;">
                 <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                <li class="tutorials" style="z-index: 1000">
-                    <a href="#">Admin</a>
-                    <ul>
-                        <li><a asp-controller="Categories" asp-action="Index">Kategorie</a></li>
-                        <li><a asp-controller="Products" asp-action="Index">Produkty</a></li>
-                        <li><a asp-controller="Coupons" asp-action="Index">Zniżki</a></li>
-                    </ul>
-                </li>
+                @if (User.IsInRole(SD.AdminEndUser))
+                {
+                    <li class="tutorials" style="z-index: 1000">
+                        <a href="#">Admin</a>
+                        <ul>
+                            <li><a asp-controller="Categories" asp-action="Index">Kategorie</a></li>
+                            <li><a asp-controller="Products" asp-action="Index">Produkty</a></li>
+                            <li><a asp-controller="Coupons" asp-action="Index">Zniżki</a></li>
+                        </ul>
+                    </li>
+                }
+
+
+                @await Html.PartialAsync("_loginPartial")
             </ul>
         </div>
+
+
     </nav><!-- #multi-level-nav .multi-level-nav -->
 
     <div class="container body-content">

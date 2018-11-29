@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Pizzeria.Data;
 using Pizzeria.Models;
+using Pizzeria.Utility;
 
 namespace Pizzeria.Controllers
 {
+    [Authorize(Roles = SD.AdminEndUser)]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;

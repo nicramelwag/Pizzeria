@@ -15,6 +15,7 @@ using Pizzeria.Utility;
 
 namespace Tangy.Controllers
 {
+    [Authorize(Roles = SD.AdminEndUser)]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _db;
